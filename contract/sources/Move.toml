@@ -1,0 +1,24 @@
+[package]
+name = "qiro"
+version = "1.0.0"
+authors = []
+
+[addresses]
+std = "0x1"
+aptos_framework = "0x1"
+switchboard = "0xb91d3fef0eeb4e685dc85e739c7d3e2968784945be4424e92e2f86e2418bf271" 
+qiro = "435c07fee9a83d1c65f667513a72d49156b001229b08db94162826e0ab02c916"
+pyth = "0x7e783b349d3e89cf5931af376ebeadbfab855b3fa239b7ada8f5a92fbea6b387"
+deployer = "0xb31e712b26fd295357355f6845e77c888298636609e93bc9b05f0f604049f434"
+wormhole = "0x5bc11445584a763c1fa7ed39081f1b920954da14e04b32440cba863d03e19625"
+
+[dependencies]
+MoveStdlib = { git = "https://github.com/aptos-labs/aptos-core.git", subdir = "aptos-move/framework/move-stdlib/", rev = "testnet" }
+AptosFramework = { git = "https://github.com/aptos-labs/aptos-core.git", subdir = "aptos-move/framework/aptos-framework/", rev = "testnet" }
+AptosStdlib = { git = "https://github.com/aptos-labs/aptos-core.git", subdir = "aptos-move/framework/aptos-stdlib/", rev = "testnet" }
+Pyth = { git = "https://github.com/pyth-network/pyth-crosschain.git", subdir = "target_chains/aptos/contracts", rev = "main" }
+
+[dependencies.Switchboard]
+git = "https://github.com/switchboard-xyz/sbv2-aptos.git"
+subdir = "move/switchboard/testnet/" # change to /mainnet/ if on mainnet - or fork and change deps for a specific commit hash
+rev = "main"
